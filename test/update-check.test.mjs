@@ -17,3 +17,16 @@ test('网络失败、限流及无版本均为未知，不误报已更新', async
     assert.equal((await checkUpdate('1.0.1', response([]))).status, 'unknown');
     assert.equal((await checkUpdate('invalid', response(['v1.0.1']))).status, 'unknown');
 });
+
+test('GitHub API 限流时使用标签订阅作为备用，不读取凭据', async () => {
+    const calls = [];
+    const fake = async (url, options) => {
+        calls.push({url, options});
+        return calls.length === 1 ? {ok: false, status: 403} : {ok: true, text: async () =>
+            '<feed><title>Tags</title><entry><title>v1.0.2</title></entry></feed>'};
+    };
+    assert.deepEqual(await checkUpdate('1.0.1', fake),
+        {status: 'update_available', currentVersion: '1.0.1', latestVersion: '1.0.2'});
+    assert.equal(calls.length, 2);
+    assert.equal(calls[1].options.headers.Authorization, undefined);
+});

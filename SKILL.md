@@ -1,7 +1,7 @@
 ---
 name: xiaomiev-mate
 description: 查询用户自行部署的 XiaomiEV Mate 车辆、实时车况、历史行程、充电记录、能效总览、月度报告、智驾统计、城市足迹与车况健康；支持能力自发现与通用只读查询。
-version: 1.0.1
+version: 1.0.2
 ---
 
 # XiaomiEV Mate 本地 Agent Skill
