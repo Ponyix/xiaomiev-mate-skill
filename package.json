@@ -1,0 +1,12 @@
+{
+  "name": "xiaomiev-mate-skill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "XiaomiEV Mate Agent Skill 安装向导",
+  "license": "MIT",
+  "bin": { "xiaomiev-mate-skill": "bin/install.mjs" },
+  "engines": { "node": ">=22.20.0" },
+  "files": ["bin/", "src/", "SKILL.md", "VERSION", "README.md", "LICENSE"],
+  "scripts": { "test": "node --test test/*.test.mjs" }
+}

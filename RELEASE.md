@@ -11,14 +11,14 @@
    ./bin/xiaomiev version
    ./bin/xiaomiev help
    node --check src/xiaomiev.mjs
-   node --test test/connector.test.mjs
+   npm test
    ```
 
 5. 从当前目录生成分发包：
 
    ```bash
    zip -r XiaomiEV-Mate-Agent-Skill-$(cat VERSION).zip \
-     VERSION CHANGELOG.md LICENSE RELEASE.md SKILL.md README.md bin src
+     VERSION CHANGELOG.md LICENSE RELEASE.md SKILL.md README.md package.json bin src
    ```
 
 6. 用户在本机替换 Skill 文件后重启或刷新 Agent 的 Skill 加载；用户已有的本机连接配置不应被覆盖。

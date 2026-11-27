@@ -11,19 +11,21 @@
 
 ## 使用前准备
 
-请先部署 [XiaomiEV Mate](https://github.com/Ponyix/xiaomiev-mate)，并在开放平台创建具有“车辆信息”权限的 API Key。运行 Agent 的电脑需要安装 Node.js 20 或更新版本，且能够访问你的服务。
+请先部署 [XiaomiEV Mate](https://github.com/Ponyix/xiaomiev-mate)，并在开放平台创建具有“车辆信息”权限的 API Key。运行 Agent 的电脑需要能够访问你的服务。Skill 连接器要求 Node.js 20 或更新版本；使用下方 npx 安装时，`skills` 安装器要求 Node.js 22.20.0 或更新版本。
 
 ## 安装
 
 ### 方式一：npx 安装
 
-在运行 Agent 的电脑上执行：
+请确保运行 Agent 的电脑已安装 Git。在终端执行：
 
 ```bash
-npx skills add Ponyix/xiaomiev-mate-skill -g
+npx --yes github:Ponyix/xiaomiev-mate-skill
 ```
 
-按提示选择需要安装的 Agent。安装器支持 Codex、Claude Code、Cursor、OpenCode、Gemini CLI、GitHub Copilot 等。
+可先运行 `node --version` 检查当前终端使用的版本。若版本低于 22.20.0，请切换至满足要求的 Node.js 后再执行。
+
+安装向导会优先列出本机检测到的 Agent；仅发现配置目录的工具会单独标注。选择一个或多个目标后，向导继续引导配置服务地址和 API Key；已有配置默认保留。未列出的工具可手动输入 Agent 标识。安装器使用 `skills` 支持的 Agent 列表，部分 Agent 共用 Skill 目录。
 
 ### 方式二：从 GitHub 手动安装
 
@@ -35,7 +37,7 @@ git clone https://github.com/Ponyix/xiaomiev-mate-skill.git
 
 ### 配置并使用
 
-两种方式安装完成后，进入 Agent 的 Skill 目录中的 `xiaomiev-mate`，在本机终端执行：
+如果使用 GitHub 手动安装，或安装时选择稍后配置，请进入 Agent 的 Skill 目录中的 `xiaomiev-mate`，在本机终端执行：
 
 ```bash
 node src/xiaomiev.mjs setup
