@@ -15,7 +15,8 @@ export function compareVersions(left, right) {
 
 async function getTags(url, fetchImpl, feed) {
     try {
-        const response = await fetchImpl(url, {
+        const requestUrl = feed ? `${url}?t=${Date.now()}` : url;
+        const response = await fetchImpl(requestUrl, {
             headers: {Accept: feed ? 'application/atom+xml' : 'application/vnd.github+json'},
             signal: AbortSignal.timeout(5000),
         });
