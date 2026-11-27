@@ -58,7 +58,7 @@ node src/xiaomiev.mjs setup
 
 ## 更新
 
-Skill 不会自动更新。需要更新时可使用 `npx skills update xiaomiev-mate -g`；刷新 Agent 后生效，原有连接配置保持不变。
+使用 Skill 时 Agent 会检查是否有新版本，并在完成查询后仅在发现新版本时提示；网络不可用时不会影响车辆查询。你也可以对 Agent 说“检查 Skill 更新”或“更新 Skill”。Skill 不会未经请求自动更新。需要手动更新时可使用 `npx skills update xiaomiev-mate -g`；刷新 Agent 后生效，原有连接配置保持不变。
 
 ## 卸载
 

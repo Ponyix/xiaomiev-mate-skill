@@ -2,6 +2,7 @@
 import {chmod, mkdir, readFile, writeFile} from 'node:fs/promises';
 import {homedir} from 'node:os';
 import {dirname, join} from 'node:path';
+import {checkUpdate} from './update-check.mjs';
 
 if (Number(process.versions.node.split('.')[0]) < 20) {
     process.stderr.write('XiaomiEV Mate Agent Skill 需要 Node.js 20 或更高版本。\n');
@@ -25,8 +26,9 @@ const helpText = `XiaomiEV Mate Agent Skill 本地连接器 v${skillVersion}
 检查本机配置（不显示 API Key）：
   xiaomiev doctor
 
-查看本地 Skill 版本：
+查看本地 Skill 版本及检查更新：
   xiaomiev version
+  xiaomiev check-update
 
 能力自发现与通用只读查询：
   xiaomiev capabilities
@@ -293,6 +295,7 @@ const run = async () => {
         return;
     }
     if (command === 'doctor') return diagnose(await readConfig());
+    if (command === 'check-update') return checkUpdate(skillVersion);
     if (command === 'capabilities') return request('/openapi/v1/capabilities', {});
     if (command === 'data-catalog') return request('/openapi/v1/vehicles/data-catalog', {});
     if (command === 'data-query') {
