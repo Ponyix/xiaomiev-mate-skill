@@ -27,4 +27,4 @@
 
 - Skill 当前调用 XiaomiEV Mate `/api/openapi/v1/**`。
 - Skill 版本与后端 Docker 版本独立；新 Skill 调用返回 HTTP 404 时，通常表示用户部署的 XiaomiEV Mate 后端过旧，应升级其 Docker 镜像后再试。
-- Skill 不从网络自动下载或更新，用户按发布包手动升级。
+- Skill 不会自动更新，用户可通过 `npx skills update xiaomiev-mate -g` 更新。
