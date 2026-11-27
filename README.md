@@ -15,15 +15,33 @@
 
 ## 安装
 
-在本机终端运行：
+### 方式一：npx 安装
+
+在运行 Agent 的电脑上执行：
 
 ```bash
 npx skills add Ponyix/xiaomiev-mate-skill -g
 ```
 
-按提示选择需要安装的 Agent；安装器支持 Codex、Claude Code、Cursor、OpenCode、Gemini CLI、GitHub Copilot 等。安装后进入对应 Agent 的 Skill 目录中的 `xiaomiev-mate`，运行 `node src/xiaomiev.mjs setup`，输入服务地址和 API Key（输入不回显）。随后刷新或重启 Agent，即可自然语言提问，例如“我的车还有多少电？”或“统计上个月的充电费用”。
+按提示选择需要安装的 Agent。安装器支持 Codex、Claude Code、Cursor、OpenCode、Gemini CLI、GitHub Copilot 等。
 
-也可以从 GitHub 下载源码，将完整目录安装到所用 Agent 的 Skill 目录，然后在该目录运行 `node src/xiaomiev.mjs setup`。连接异常时，可使用同目录的 `node src/xiaomiev.mjs doctor` 检查。
+### 方式二：从 GitHub 手动安装
+
+```bash
+git clone https://github.com/Ponyix/xiaomiev-mate-skill.git
+```
+
+将下载的 `xiaomiev-mate-skill` 完整目录复制到所用 Agent 的 Skill 目录，目录可以命名为 `xiaomiev-mate`。请保留 `SKILL.md`、`src/`、`bin/` 和 `VERSION` 的相对位置；不同 Agent 的 Skill 目录请参考该 Agent 的安装说明。
+
+### 配置并使用
+
+两种方式安装完成后，进入 Agent 的 Skill 目录中的 `xiaomiev-mate`，在本机终端执行：
+
+```bash
+node src/xiaomiev.mjs setup
+```
+
+输入服务地址和 API Key（输入不回显）；随后刷新或重启 Agent，即可自然语言提问，例如“我的车还有多少电？”或“统计上个月的充电费用”。连接异常时，可在同一目录运行 `node src/xiaomiev.mjs doctor` 检查。
 
 ## 本机配置位置
 
