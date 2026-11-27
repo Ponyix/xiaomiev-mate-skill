@@ -1,6 +1,8 @@
-# XiaomiEV Mate Agent Skill
+# Xiaomi EV Mate Agent Skill
 
-这是面向本地 AI Agent 的 [XiaomiEV Mate](https://github.com/Ponyix/xiaomiev-mate) Skill。配置自部署服务地址和 API Key 后，可以用自然语言查询车辆、行程、充电和用车统计；Skill 通过本机连接器调用开放 API，无需额外部署服务。
+这是面向本地 AI Agent 的 [Xiaomi EV Mate](https://github.com/Ponyix/xiaomiev-mate) Skill。配置自部署服务地址和 API Key 后，可以用自然语言查询车辆、行程、充电和用车统计；Skill 通过本机连接器调用开放 API，无需额外部署服务。
+
+适用于通过自部署服务查询小米汽车（Xiaomi EV）的车况、行程、充电费用和能耗。
 
 ## 能力
 
@@ -11,7 +13,7 @@
 
 ## 使用前准备
 
-请先部署 [XiaomiEV Mate](https://github.com/Ponyix/xiaomiev-mate)，并在开放平台创建具有“车辆信息”权限的 API Key。运行 Agent 的电脑需要能够访问你的服务。Skill 连接器要求 Node.js 20 或更新版本；使用下方 npx 安装时，`skills` 安装器要求 Node.js 22.20.0 或更新版本。
+请先部署 [Xiaomi EV Mate](https://github.com/Ponyix/xiaomiev-mate)，并在开放平台创建具有“车辆信息”权限的 API Key。运行 Agent 的电脑需要能够访问你的服务。Skill 连接器要求 Node.js 20 或更新版本；使用下方 npx 安装时，`skills` 安装器要求 Node.js 22.20.0 或更新版本。
 
 ## 安装
 
@@ -72,7 +74,7 @@ npx skills remove xiaomiev-mate -g
 
 从 GitHub 手动安装的用户，请删除自己复制到 Agent Skill 目录中的 `xiaomiev-mate` 文件夹。
 
-卸载 Skill 不会删除保存在本机的服务地址和 API Key 配置。如果以后不再使用，可按上方“本机配置位置”手动删除配置文件；也可以在 XiaomiEV Mate 开放平台吊销对应 API Key。
+卸载 Skill 不会删除保存在本机的服务地址和 API Key 配置。如果以后不再使用，可按上方“本机配置位置”手动删除配置文件；也可以在 Xiaomi EV Mate 开放平台吊销对应 API Key。
 
 ## 许可证
 

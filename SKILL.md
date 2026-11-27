@@ -1,14 +1,14 @@
 ---
 name: xiaomiev-mate
-description: 查询用户自行部署的 XiaomiEV Mate 车辆、实时车况、历史行程、充电记录、能效总览、月度报告、智驾统计、城市足迹与车况健康；支持能力自发现与通用只读查询。
+description: 查询用户自部署的 Xiaomi EV Mate 小米汽车数据，包括 Xiaomi EV 车辆实时车况、电量续航、历史行程、充电记录及费用、能耗、智驾和城市足迹；支持自然语言只读查询。
 version: 1.0.3
 ---
 
-# XiaomiEV Mate 本地 Agent Skill
+# Xiaomi EV Mate 本地 Agent Skill
 
-本文件所在目录是 Skill 根目录。Agent 必须直接执行该目录的 `node <Skill根目录>/src/xiaomiev.mjs`（要求 Node.js 20+），无需将 `bin/` 加入 PATH；以下示例的 `xiaomiev` 均指这一命令。使用连接器访问用户自己部署的 XiaomiEV Mate 开放 API。不要请求、记录或显示 API Key；收到 401 时解释 Key 可能无效、过期或已吊销，引导用户在开放平台创建新 Key 并在本机重新运行 setup，保留原地址，不能让用户在聊天中发送 Key；若连接未配置，提示用户在本机终端进入 Skill 根目录运行 `node src/xiaomiev.mjs setup`，不要让用户在聊天中粘贴密钥。需要命令帮助时执行 `xiaomiev help`；`xiaomiev doctor` 检查配置、连接、车辆读取权限、车辆数量和数据目录可用性，不显示 API Key。
+本文件所在目录是 Skill 根目录。Agent 必须直接执行该目录的 `node <Skill根目录>/src/xiaomiev.mjs`（要求 Node.js 20+），无需将 `bin/` 加入 PATH；以下示例的 `xiaomiev` 均指这一命令。使用连接器访问用户自己部署的 Xiaomi EV Mate 开放 API。不要请求、记录或显示 API Key；收到 401 时解释 Key 可能无效、过期或已吊销，引导用户在开放平台创建新 Key 并在本机重新运行 setup，保留原地址，不能让用户在聊天中发送 Key；若连接未配置，提示用户在本机终端进入 Skill 根目录运行 `node src/xiaomiev.mjs setup`，不要让用户在聊天中粘贴密钥。需要命令帮助时执行 `xiaomiev help`；`xiaomiev doctor` 检查配置、连接、车辆读取权限、车辆数量和数据目录可用性，不显示 API Key。
 
-Skill 版本由根目录 `VERSION` 管理；执行 `xiaomiev version` 可查看本地 Skill 版本。Skill 与用户 Docker 部署的 XiaomiEV Mate 独立更新，不能因为 Skill 更新而自动升级后端。
+Skill 版本由根目录 `VERSION` 管理；执行 `xiaomiev version` 可查看本地 Skill 版本。Skill 与用户 Docker 部署的 Xiaomi EV Mate 独立更新，不能因为 Skill 更新而自动升级后端。
 
 ## 版本检查与更新
 
@@ -89,7 +89,7 @@ xiaomiev health --car-id 1 --start-date 2026-11-01 --end-date 2026-11-26
 
 - 可以向用户返回行程起点/终点文字地点、充电地点以及行政区足迹名称。
 - 不返回或推测经纬度、轨迹点、小米外部 ID、原始响应、诊断码、账号凭据或 API Key。
-- 实时车况和充电检测沿用 XiaomiEV Mate 原有实时处理逻辑；历史明细与统计分析只读取已同步的本地记录。
+- 实时车况和充电检测沿用 Xiaomi EV Mate 原有实时处理逻辑；历史明细与统计分析只读取已同步的本地记录。
 - 缺失字段保持“暂无数据”，不得用零值或常识补造。
 
 ## 灵活查询本地业务数据
