@@ -58,6 +58,20 @@ node src/xiaomiev.mjs setup
 
 Skill 不会自动更新。需要更新时可使用 `npx skills update xiaomiev-mate -g`；刷新 Agent 后生效，原有连接配置保持不变。
 
+## 卸载
+
+通过 `npx skills` 安装的用户，可以在终端运行：
+
+```bash
+npx skills remove xiaomiev-mate -g
+```
+
+按照提示确认卸载范围。部分 Agent 共用 Skill 目录，移除共用目录中的 Skill 后，读取该目录的其他 Agent 也可能无法再使用它。刷新或重启 Agent 后，技能列表会更新。
+
+从 GitHub 手动安装的用户，请删除自己复制到 Agent Skill 目录中的 `xiaomiev-mate` 文件夹。
+
+卸载 Skill 不会删除保存在本机的服务地址和 API Key 配置。如果以后不再使用，可按上方“本机配置位置”手动删除配置文件；也可以在 XiaomiEV Mate 开放平台吊销对应 API Key。
+
 ## 许可证
 
 本项目采用 [MIT License](LICENSE)。
